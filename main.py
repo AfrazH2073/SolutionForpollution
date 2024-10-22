@@ -45,10 +45,16 @@ def get_milestonesAndTimelines(request:Request) -> HTMLResponse:
   with open("views/milestonesAndTimelines.html") as html:
     return HTMLResponse(content=html.read())
   
-
+# This is the favorites page --- '/favorites' same for html
 @app.get('/favorites', response_class=HTMLResponse)
 def get_favorites(request: Request) -> HTMLResponse:
   with open("views/favorites.html") as html:
+    return HTMLResponse(content=html.read())
+
+# This is the schematics page --- '/favorites' same for html
+@app.get('/schematics', response_class=HTMLResponse)
+def get_favorites(request: Request) -> HTMLResponse:
+  with open("views/schematics.html") as html:
     return HTMLResponse(content=html.read())
 
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
