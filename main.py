@@ -68,6 +68,18 @@ def get_video(request: Request) -> HTMLResponse:
 def get_poster(request: Request) -> HTMLResponse:
   with open("views/poster.html") as html:
     return HTMLResponse(content=html.read())
+  
+# This is the mini projects page --- '/miniProjects' same for html
+@app.get('/miniProjects', response_class=HTMLResponse)
+def get_miniProjects(request: Request) -> HTMLResponse:
+  with open("views/miniProjects.html") as html:
+    return HTMLResponse(content=html.read())
+  
+# This is the resources page --- '/resources' same for html
+@app.get('/resources', response_class=HTMLResponse)
+def get_miniProjects(request: Request) -> HTMLResponse:
+  with open("views/resources.html") as html:
+    return HTMLResponse(content=html.read())
 
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
