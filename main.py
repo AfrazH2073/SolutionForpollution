@@ -27,20 +27,28 @@ app.mount('/css', css_files, name='css') # Mount the static files directory to /
 
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-# This is the homepage
+# This is the homepage --- '/' same for html
 @app.get('/', response_class=HTMLResponse)
 def get_home(request:Request) -> HTMLResponse:
   with open("views/homepage.html") as html:
     return HTMLResponse(content=html.read())
   
+# This is the team page --- '/teams' same for html
 @app.get('/teams', response_class=HTMLResponse)
 def get_teams(request:Request) -> HTMLResponse:
   with open("views/teammates.html") as html:
     return HTMLResponse(content=html.read())
   
+# This is the milestone and timelines --- '/milestonesAndTimelines' same for html
 @app.get('/milestonesAndTimelines', response_class=HTMLResponse)
 def get_milestonesAndTimelines(request:Request) -> HTMLResponse:
   with open("views/milestonesAndTimelines.html") as html:
+    return HTMLResponse(content=html.read())
+  
+
+@app.get('/favorites', response_class=HTMLResponse)
+def get_favorites(request: Request) -> HTMLResponse:
+  with open("views/favorites.html") as html:
     return HTMLResponse(content=html.read())
 
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
