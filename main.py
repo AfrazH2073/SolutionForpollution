@@ -16,11 +16,13 @@ import uvicorn                                    # Used for running the app dir
 app = FastAPI()                                   # Specify the "app" that will run the routing
 views = Jinja2Templates(directory='views')        # Specify where the HTML files are located
 static_files = StaticFiles(directory='public')    # Specify where the static files are located
+static_pictures = StaticFiles(directory='pictures')
 css_files = StaticFiles(directory='css')          # Specify where the css files are located
 
 # Mount the static directory
-app.mount('/public', static_files, name='public') # Mount the static files directory to /public
-app.mount('/css', css_files, name='css') # Mount the static files directory to /css
+app.mount('/public', static_files, name='public') # Mount the static files directory to /public for javascripts
+app.mount('/pictures', static_pictures, name='pictures') # Mount the static files directory to /pictures for pictures
+app.mount('/css', css_files, name='css') # Mount the static files directory to /css for css style to make things pretty
 
 
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
@@ -29,6 +31,11 @@ app.mount('/css', css_files, name='css') # Mount the static files directory to /
 @app.get('/', response_class=HTMLResponse)
 def get_home(request:Request) -> HTMLResponse:
   with open("views/homepage.html") as html:
+    return HTMLResponse(content=html.read())
+  
+@app.get('/Teams', response_class=HTMLResponse)
+def get_teams(request:Request) -> HTMLResponse:
+  with open("views/teammates.html") as html:
     return HTMLResponse(content=html.read())
 
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
