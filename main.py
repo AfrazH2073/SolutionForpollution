@@ -33,7 +33,7 @@ def get_home(request:Request) -> HTMLResponse:
   with open("views/homepage.html") as html:
     return HTMLResponse(content=html.read())
   
-@app.get('/teams', response_class=HTMLResponse)
+@app.get('/team', response_class=HTMLResponse)
 def get_teams(request:Request) -> HTMLResponse:
   with open("views/teammates.html") as html:
     return HTMLResponse(content=html.read())
