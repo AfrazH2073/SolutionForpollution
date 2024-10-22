@@ -33,9 +33,14 @@ def get_home(request:Request) -> HTMLResponse:
   with open("views/homepage.html") as html:
     return HTMLResponse(content=html.read())
   
-@app.get('/team', response_class=HTMLResponse)
+@app.get('/teams', response_class=HTMLResponse)
 def get_teams(request:Request) -> HTMLResponse:
   with open("views/teammates.html") as html:
+    return HTMLResponse(content=html.read())
+  
+@app.get('/milestonesAndTimelines', response_class=HTMLResponse)
+def get_milestonesAndTimelines(request:Request) -> HTMLResponse:
+  with open("views/milestonesAndTimelines.html") as html:
     return HTMLResponse(content=html.read())
 
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
