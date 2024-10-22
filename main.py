@@ -51,10 +51,16 @@ def get_favorites(request: Request) -> HTMLResponse:
   with open("views/favorites.html") as html:
     return HTMLResponse(content=html.read())
 
-# This is the schematics page --- '/favorites' same for html
+# This is the schematics page --- '/schematics' same for html
 @app.get('/schematics', response_class=HTMLResponse)
 def get_favorites(request: Request) -> HTMLResponse:
   with open("views/schematics.html") as html:
+    return HTMLResponse(content=html.read())
+  
+# This is the video demo page --- '/video' same for html
+@app.get('/video', response_class=HTMLResponse)
+def get_favorites(request: Request) -> HTMLResponse:
+  with open("views/video.html") as html:
     return HTMLResponse(content=html.read())
 
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
