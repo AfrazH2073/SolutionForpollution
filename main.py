@@ -8,7 +8,7 @@ from fastapi.responses import HTMLResponse        # Used for returning HTML resp
 from fastapi.templating import Jinja2Templates    # Used for generating HTML from templatized files
 from fastapi.staticfiles import StaticFiles       # Used for making static resources available to server
 import uvicorn                                    # Used for running the app directly through Python
-import dbutils as db                             # Import helper module of database functions!
+# import dbutils as db                             # Import helper module of database functions!
 
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
@@ -18,11 +18,10 @@ views = Jinja2Templates(directory='views')        # Specify where the HTML files
 static_files = StaticFiles(directory='public')    # Specify where the static files are located
 css_files = StaticFiles(directory='css')          # Specify where the css files are located
 
+# Mount the static directory
 app.mount('/public', static_files, name='public') # Mount the static files directory to /public
 app.mount('/css', css_files, name='css') # Mount the static files directory to /css
 
-# Mount the static directory
-app.mount("/static", StaticFiles(directory="static"), name="static")
 
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
