@@ -62,6 +62,12 @@ def get_favorites(request: Request) -> HTMLResponse:
 def get_favorites(request: Request) -> HTMLResponse:
   with open("views/video.html") as html:
     return HTMLResponse(content=html.read())
+  
+# This is the poster page --- '/poster' same for html
+@app.get('/poster', response_class=HTMLResponse)
+def get_favorites(request: Request) -> HTMLResponse:
+  with open("views/poster.html") as html:
+    return HTMLResponse(content=html.read())
 
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
