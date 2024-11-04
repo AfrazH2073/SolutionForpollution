@@ -1,26 +1,55 @@
 @import url(//fonts.googleapis.com/css?family=Lato:300:400);
 
 body {
-  margin:0;
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  width: 60%;
+  margin: auto;
+  overflow: hidden;
+}
+.box {
+  background-color: #fff;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+}
+.box-info h3 {
+  margin: 0;
+  color: #333;
+}
+.box-info p {
+  margin: 10px 0;
+  color: #666;
 }
 
+/* body {
+  margin:0;
+} */
+
 .menu-bar { /* menu bar */
-    background-color: #3b67be;
-    overflow: hidden;
+  background-color: #3b67be;
+  overflow: hidden;
 }
 
 .menu-bar a {
-    float: left;
-    display: block;
-    color: black;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
 }
 
 .menu-bar a:hover {
-    background-color: #1687B5;
-    color: black;
+  background-color: #1687B5;
+  color: black;
 }
 
 h1 {
